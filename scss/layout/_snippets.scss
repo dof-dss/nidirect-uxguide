@@ -1,0 +1,24 @@
+.nidirect-element{
+    color: $nidirect-red;
+}
+.nidirect-selector{
+    color: $nidirect-green;
+}
+.nidirect-attribute{
+    color: $nidirect-blue-attribute;
+}
+
+pre{
+    background-color: $nidirect-whitesmoke;
+    border: 1px solid transparent;
+    color: $nidirect-pre-text;
+    line-height: 1.5;
+    white-space: pre;
+    overflow-x: scroll;
+    padding: 1rem;
+} 
+
+.snippet-link{
+    text-decoration: underline;
+    color: $nidirect-pre-link;
+}
