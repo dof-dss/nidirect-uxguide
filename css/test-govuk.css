@@ -6444,4 +6444,9 @@ pre {
   text-decoration: underline;
   color: #0000ee;
 }
+
+.nidirect-uxg--image {
+  display: block;
+  width: 100%;
+}
 /*# sourceMappingURL=test-govuk.css.map */
