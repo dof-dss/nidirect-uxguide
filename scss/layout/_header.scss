@@ -75,7 +75,7 @@ header{
 }
 
 .flex-parent {
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: $large-breakpoint) {
         
     display: flex;
     justify-content: space-between;
