@@ -6401,12 +6401,17 @@ header .nidirect-header__logo {
   }
 }
 
+/* styling fix for navigation menu button */
+header div.nidirect-header div.flex-parent {
+  position: relative;
+}
+
 .nidirect-element {
   color: #900b18;
 }
 
 .nidirect-selector {
-  color: #1E8400;
+  color: #1D8000;
 }
 
 .nidirect-attribute {
@@ -6426,6 +6431,32 @@ pre {
 .snippet-link {
   text-decoration: underline;
   color: #0000ee;
+}
+
+pre.language-markup {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding-left: 2.5em;
+  position: relative;
+}
+
+/* progressive enhancment adding line numbers to code using a span - nidirect-codeLine*/
+code.language-markup {
+  counter-reset: code-line-number;
+}
+
+pre.language-markup code.language-markup span.nidirect-codeLine {
+  margin-right: .75em;
+  width: 2em;
+  text-align: right;
+  position: absolute;
+  left: 0;
+  color: #647178;
+}
+
+pre.language-markup code.language-markup span.nidirect-codeLine::before {
+  counter-increment: code-line-number;
+  content: counter(code-line-number) " ";
 }
 
 .nidirect-uxg--image {
