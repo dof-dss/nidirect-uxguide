@@ -29,46 +29,7 @@
   <![endif]-->
 
   <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
-  
-  <!--style fixes remove when added to sass and tested-->
-  <style>
-    /* styling fix for navigation menu button */
-    header div.nidirect-header div.flex-parent {
-      position: relative;
-    }
 
-    /* change colour of code green text */
-    pre.language-markup code.language-markup span.nidirect-selector {
-      color: #1D8000;
-    }
-
-    /* styling fixes for word wrap of coded sections */
-    pre.language-markup {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      padding-left: 2.5em;
-      position: relative;
-    }
-
-    /* progressive enhancment adding line numbers to code using a span - nidirect-codeLine*/
-    code.language-markup {
-      counter-reset: code-line-number;
-    }
-
-    pre.language-markup code.language-markup span.nidirect-codeLine {
-      margin-right: .75em;
-      width: 2em;
-      text-align: right;
-      position: absolute;
-      left: 0;
-      color: #647178;
-    }
-
-    pre.language-markup code.language-markup span.nidirect-codeLine::before {
-      counter-increment: code-line-number;
-      content: counter(code-line-number)" ";
-    }
-  </style>
 </head>
 
 <body class="govuk-template__body ">
@@ -122,7 +83,7 @@
               </a>
             </li>
             <li class="govuk-header__navigation-item nidirect-header__navigation-item">
-              <a class="govuk-header__link" href="principles.html">
+              <a class="govuk-header__link" href="user_centred_design.html">
                 User-centred design
               </a>
             </li>
