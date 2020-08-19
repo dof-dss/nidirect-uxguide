@@ -81,3 +81,9 @@ header{
     justify-content: space-between;
     }
 }
+
+/* styling fix for navigation menu button */
+header div.nidirect-header div.flex-parent {
+    position: relative;
+    }
+
