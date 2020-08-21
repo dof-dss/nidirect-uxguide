@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png">
 
   <!--[if !IE 8]><!-->
-  <link href="css/test-govuk.css" rel="stylesheet">
+  <link href="css/nidirect_all.css" rel="stylesheet">
   <!--<![endif]-->
 
   <!--[if IE 8]>
@@ -29,46 +29,7 @@
   <![endif]-->
 
   <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
-  
-  <!--style fixes remove when added to sass and tested-->
-  <style>
-    /* styling fix for navigation menu button */
-    header div.nidirect-header div.flex-parent {
-      position: relative;
-    }
 
-    /* change colour of code green text */
-    pre.language-markup code.language-markup span.nidirect-selector {
-      color: #1D8000;
-    }
-
-    /* styling fixes for word wrap of coded sections */
-    pre.language-markup {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      padding-left: 2.5em;
-      position: relative;
-    }
-
-    /* progressive enhancment adding line numbers to code using a span - nidirect-codeLine*/
-    code.language-markup {
-      counter-reset: code-line-number;
-    }
-
-    pre.language-markup code.language-markup span.nidirect-codeLine {
-      margin-right: .75em;
-      width: 2em;
-      text-align: right;
-      position: absolute;
-      left: 0;
-      color: #647178;
-    }
-
-    pre.language-markup code.language-markup span.nidirect-codeLine::before {
-      counter-increment: code-line-number;
-      content: counter(code-line-number)" ";
-    }
-  </style>
 </head>
 
 <body class="govuk-template__body ">
@@ -122,7 +83,7 @@
               </a>
             </li>
             <li class="govuk-header__navigation-item nidirect-header__navigation-item">
-              <a class="govuk-header__link" href="principles.html">
+              <a class="govuk-header__link" href="user_centred_design.html">
                 User-centred design
               </a>
             </li>
@@ -160,10 +121,10 @@
               href="https://design-system.service.gov.uk">GOV.UK design system</a> and be branded with the nidirect
             header and footer.</p>
 
-          <h2 class="govuk-heading-m" id="inclduing-frontend">Including the GOV.UK Frontend and nidirect branding in
+          <h2 class="govuk-heading-l" id="inclduing-frontend">Including the GOV.UK Frontend and nidirect branding in
             your projects</h2>
 
-          <p class="govuk-body">To start using nidirect brand with GOV.UK styles, components and patterns, you’ll need
+          <p class="govuk-body">To start using the nidirect brand with GOV.UK styles, components and patterns, you’ll need
             to include GOV.UK Frontend and nidirect branding in your project.</p>
           <p class="govuk-body">You can install both the GOV.UK Frontend and nidirect branding using node.js package
             manager (npm).</p>
@@ -177,7 +138,8 @@
             in the <a class="govuk-link" href="https://github.com/amcalinney/UXGuide-frontend">nidirect frontend
               repository.</a></p>
 
-          <h3 class="govuk-heading-l" id="header-component">nidirect header</h3>
+              <h2 class="govuk-heading-l" id="nidirect-branding">nidirect branding</h2>              
+          <h3 class="govuk-heading-m" id="header-component">nidirect header</h3>
 
           <p class="govuk-body">The nidirect header shows users that they are on nidirect.gov.uk and which service they
             are using. You must use the nidirect header at the top of each page in your application.</p>
@@ -209,7 +171,7 @@
 <span class="nidirect-codeLine"></span>     <span class="nidirect-element">&lt;path</span><span class="nidirect-selector"> fill=</span><span class="nidirect-attribute">"currentColor"</span><span class="nidirect-selector"> d=</span><span class="nidirect-attribute">"M133,29.91v-5a9.67,9.67,0,0,1-1.86.24c-1.39,0-2-.59-2-1.92V13.49H133V8.85h-3.84V1.39H122V25c0,3.72,2.28,5.5,7,5.5a15,15,0,0,0,4.1-.57"</span><span class="nidirect-element">/&gt;</span>   
 <span class="nidirect-codeLine"></span>     <span class="nidirect-element">&lt;path</span><span class="nidirect-selector"> fill=</span><span class="nidirect-attribute">"currentColor"</span><span class="nidirect-selector"> d=</span><span class="nidirect-attribute">"M55.3,3.75A3.66,3.66,0,1,1,59,7.41,3.66,3.66,0,0,1,55.3,3.75h0"</span><span class="nidirect-element">/&gt;</span>   
 <span class="nidirect-codeLine"></span>     <span class="nidirect-element">&lt;path</span><span class="nidirect-selector"> fill=</span><span class="nidirect-attribute">"currentColor"</span><span class="nidirect-selector"> d=</span><span class="nidirect-attribute">"M100.49,20.93c0-.44,0-.83,0-1.21,0-7.06-4.2-11.32-10.79-11.32S78.56,12.81,78.56,19.69c0,6.68,4.37,11,11.17,11,5,0,8.48-2,10.58-5.79L95.58,22.7a5,5,0,0,1-4.73,3c-2.84,0-4.52-1.68-4.52-4.61v-.12ZM89.76,12.77c2.1,0,3.34,1.51,3.34,4.14H86.54C86.6,14.19,87.72,12.77,89.76,12.77Z"</span><span class="nidirect-element">/&gt;</span> 
-<span class="nidirect-codeLine"></span>     <span class="nidirect-element">&lt;image</span><span class="nidirect-selector"> role=</span><span class="nidirect-attribute">"presentation"</span><span class="nidirect-selector"> src=</span><span class="nidirect-attribute snippet-link">"assests/images/nidirect-logo.png/"</span><span class="nidirect-selector"> xlink:href</span><span class="nidirect-element">=""</span><span class="nidirect-selector"> width=</span><span class="nidirect-attribute">"133"</span><span class="nidirect-selector"> height=</span><span class="nidirect-attribute">"32"</span><span class="nidirect-element">&gt;</span> 
+<span class="nidirect-codeLine"></span>     <span class="nidirect-element">&lt;image</span><span class="nidirect-selector"> role=</span><span class="nidirect-attribute">"presentation"</span><span class="nidirect-selector"> src=</span><span class="nidirect-attribute snippet-link">"assets/images/nidirect-logo.png"</span><span class="nidirect-selector"> xlink:href</span><span class="nidirect-element">=""</span><span class="nidirect-selector"> width=</span><span class="nidirect-attribute">"133"</span><span class="nidirect-selector"> height=</span><span class="nidirect-attribute">"32"</span><span class="nidirect-element">&gt;</span> 
 <span class="nidirect-codeLine"></span>     <span class="nidirect-element">&lt;/image&gt;</span>
 <span class="nidirect-codeLine"></span>    <span class="nidirect-element">&lt;/svg&gt;</span>
 <span class="nidirect-codeLine"></span>    <span class="nidirect-element">&lt;span</span><span class="nidirect-selector"> class=</span><span class="nidirect-attribute">"govuk-visually-hidden"</span><span class="nidirect-element">&gt;</span>(n i direct government services)<span class="nidirect-element">&lt;/span&gt;</span>
@@ -226,7 +188,7 @@
             </div>
           </details>
 
-          <h3 class="govuk-heading-l" id="footer-component">nidirect footer</h3>
+          <h3 class="govuk-heading-m" id="footer-component">nidirect footer</h3>
 
           <p class="govuk-body">The footer provides copyright, licensing and other information about your service and
             department. You must use the nidirect footer at the bottom of each page in your application.</p>
@@ -239,9 +201,9 @@
           <p class="govuk-body">You will need to link to your own: </p>
 
           <ul class="govuk-list govuk-list--bullet">
-            <li>Privacy statement</li>
-            <li>Cookies</li>
-            <li>Accessibility statement</li>
+            <li>privacy statement</li>
+            <li>cookies</li>
+            <li>accessibility statement</li>
           </ul>
 
           <p class="govuk-body">A link to terms and conditions be necessary in some scenarios, but most applications
