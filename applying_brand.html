@@ -156,7 +156,38 @@
             in the <a class="govuk-link" href="https://github.com/amcalinney/UXGuide-frontend">nidirect frontend
               repository.</a></p>
 
+          <h2 class="govuk-heading-l" id="nidirect-robots">Robots meta tag</h2>
+          <p class="govuk-body">The starting point for an nidirect transactional service is a page on the www.nidirect.gov.uk core site. 
+            Content on transactional services should not be indexed by search engines. Each page must include a 'noindex, nofollow' instruction for robots within the head section.</p>
+
+          <details class="govuk-details demo" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                nidirect robots instructional HTML code
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <pre class="language-markup"> <code class="language-markup">
+<span class="nidirect-codeLine"></span> <span class="nidirect-element">&lt;meta</span><span class="nidirect-selector"> name=</span><span class="nidirect-attribute">"robots"</span><span class="nidirect-selector"> content=</span><span class="nidirect-attribute">"no index, no follow"</span><span class="nidirect-element">/&gt;</span>   
+</code></pre>
+            </div>
+          </details>
+
           <h2 class="govuk-heading-l" id="nidirect-branding">nidirect branding</h2>
+          <h3 class="govuk-heading-m" id="favicon-component">nidirect favicon</h3>
+          <p class="govuk-body">Each page must include the nidirect favicon</p>
+          <details class="govuk-details demo" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                nidirect favicon HTML code
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <pre class="language-markup"> <code class="language-markup">
+<span class="nidirect-codeLine"></span> <span class="nidirect-element">&lt;link</span><span class="nidirect-selector"> rel=</span><span class="nidirect-attribute">"icon"</span><span class="nidirect-selector"> type=</span><span class="nidirect-attribute">"image/vnd.microsoft.icon"</span><span class="nidirect-attribute">"icon"</span><span class="nidirect-selector"> href=</span><span class="nidirect-attribute">"favicon.ico"</span><span class="nidirect-element">/&gt;</span>   
+</code></pre>
+            </div>
+          </details>
           <h3 class="govuk-heading-m" id="header-component">nidirect header</h3>
 
           <p class="govuk-body">The nidirect header shows users that they are on nidirect.gov.uk and which service they
