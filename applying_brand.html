@@ -137,7 +137,7 @@
 
           <h2 class="govuk-heading-l" id="nidirect-robots">Robots meta tag</h2>
           <p class="govuk-body">The starting point for an nidirect transactional service is a page on the www.nidirect.gov.uk core site. 
-            Content on transactional services should not be indexed by search engines. Each page must include a 'noindex, nofollow' instruction for robots within the head section.</p>
+            Content on transactional services should not be indexed by search engines. Each page must include a 'noindex, nofollow' instruction that should be inserted into the <span>&lt;head&gt;</span> element of the HTML code.</p>
 
           <details class="govuk-details demo" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -154,7 +154,7 @@
 
           <h2 class="govuk-heading-l" id="nidirect-branding">nidirect branding</h2>
           <h3 class="govuk-heading-m" id="favicon-component">nidirect favicon</h3>
-          <p class="govuk-body">Each page must include the nidirect favicon</p>
+          <p class="govuk-body">Each page must include the nidirect favicon.  This should be inserted into the <span>&lt;head&gt;</span> element of the HTML code.</p>
           <details class="govuk-details demo" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
@@ -163,7 +163,7 @@
             </summary>
             <div class="govuk-details__text">
               <pre class="language-markup"><code class="language-markup">
-<span class="nidirect-codeLine"></span><span class="nidirect-element">&lt;link</span><span class="nidirect-selector"> rel=</span><span class="nidirect-attribute">"icon"</span><span class="nidirect-selector"> type=</span><span class="nidirect-attribute">"image/vnd.microsoft.icon"</span><span class="nidirect-attribute">"icon"</span><span class="nidirect-selector"> href=</span><span class="nidirect-attribute">"favicon.ico"</span><span class="nidirect-element">/&gt;</span></code>   
+<span class="nidirect-codeLine"></span><span class="nidirect-element">&lt;link</span><span class="nidirect-selector"> rel=</span><span class="nidirect-attribute">"shortcut icon"</span><span class="nidirect-selector"> size=</span><span class="nidirect-attribute">"16x16 32x32 48x48"</span><span class="nidirect-selector"> href=</span><span class="nidirect-attribute">"assets/images/favicon.ico"</span><span class="nidirect-selector"> type=</span><span class="nidirect-attribute">"image/x-icon"</span><span class="nidirect-element">&gt;</span></code>   
 </pre>
             </div>
           </details>
