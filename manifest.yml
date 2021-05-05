@@ -1,6 +1,9 @@
 ---
 applications:
 - name: uxg
+  routes:
+    - route: uxg.london.cloudapps.digital
+    - route: uxg.nidirect.gov.uk
   memory: 64M
   buildpacks:
   - staticfile_buildpack
