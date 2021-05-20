@@ -1,15 +1,23 @@
 {
-  "name": "govuk-package",
-  "version": "3.4.0",
-  "description": "govukpackage",
+  "name": "uxg-govuk",
+  "version": "1.0.0",
+  "description": "govuk frontend for uxg",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "mca",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amcalinney/nidirect-uxguide.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amcalinney/nidirect-uxguide/issues"
+  },
+  "homepage": "https://github.com/amcalinney/nidirect-uxguide#readme",
   "dependencies": {
-    "govuk-frontend": "^3.5.0",
-    "nunjucks": "^3.2.0"
+    "govuk-frontend": "^3.12.0",
+    "nidirect-frontend": "^2.0.0"
   }
 }
