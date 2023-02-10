@@ -29,7 +29,7 @@ jobs:
         cf_space: Sandbox
         command: push nidirect-uxguide--$PR_SOURCE   
     - name: Comment PR
-      uses: thollander/actions-comment-pull-request@master
+      uses: thollander/actions-comment-pull-request@main
       with:
         message: 'Build was successful and a review app can be found here: https://nidirect-uxguide--${{ github.head_ref }}.london.cloudapps.digital'
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
