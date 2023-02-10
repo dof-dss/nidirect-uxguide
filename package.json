@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/amcalinney/nidirect-uxguide#readme",
   "dependencies": {
-    "govuk-frontend": "^4.3.1",
+    "govuk-frontend": "^4.4.0",
     "nidirect-frontend": "^2.0.0"
   }
 }
