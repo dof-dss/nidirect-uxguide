@@ -52,7 +52,9 @@ header{
 .nidirect-header__logo{
  padding: 0;
  border:0;
- align-self: center;
+ -ms-flex-item-align: center;
+ -ms-grid-row-align: center;
+ align-self: flex-start;
  margin: 0;
  display: block;
  padding: 0.74625rem 0;
@@ -75,10 +77,20 @@ header{
 }
 
 .flex-parent {
-    @media screen and (min-width: $large-breakpoint) {
+    @media screen and (min-width: 769px) {
         
     display: flex;
     justify-content: space-between;
+
+    .nidirect-header__logo{
+        float:left;
+      }
+    
+      .nidirect-right ul {
+        text-align:right;
+      }
+    
+
     }
 }
 
