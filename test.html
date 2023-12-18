@@ -17,9 +17,12 @@
 </head>
 
 <body class="govuk-template__body ">
-  <script>
+
+  <!-- <script>
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
-  </script>
+  </script> -->
+  <!-- needed to update script tags -->
+  <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
   <header role="banner">
     <div class="nidirect-header">
@@ -46,8 +49,8 @@
      </div>
     </div>     
    </header>  
-   
-   <header role="banner" data-module="govuk-header">
+   <!-- needed to add in class govuk-header to header tag -->
+   <header  role="banner" data-module="govuk-header">
     <div class="nidirect-header">
      <div class="govuk-width-container flex-parent">
       <div class="nidirect-header__logo govuk-header__container">
@@ -63,6 +66,7 @@
         <path fill="currentColor" d="M55.3,3.75A3.66,3.66,0,1,1,59,7.41,3.66,3.66,0,0,1,55.3,3.75h0"/>   
         <path fill="currentColor" d="M100.49,20.93c0-.44,0-.83,0-1.21,0-7.06-4.2-11.32-10.79-11.32S78.56,12.81,78.56,19.69c0,6.68,4.37,11,11.17,11,5,0,8.48-2,10.58-5.79L95.58,22.7a5,5,0,0,1-4.73,3c-2.84,0-4.52-1.68-4.52-4.61v-.12ZM89.76,12.77c2.1,0,3.34,1.51,3.34,4.14H86.54C86.6,14.19,87.72,12.77,89.76,12.77Z"/> 
        </svg>
+       </span>
        <span class="govuk-visually-hidden">(n i direct government services)</span>
       </div>
    
@@ -125,10 +129,17 @@
   </p>
  </div>
 </footer>
-<script src="./node_modules/govuk-frontend/govuk/all.js"></script>
-  <script>
+<!-- needed to update script tags -->
+<script  type="module"  src="/node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
+<script  type="module">
+  import  {  initAll  }  from  '/node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'
+
+  initAll()
+</script>
+<!-- <script src="./node_modules/govuk-frontend/govuk/all.js"></script> -->
+<!--   <script>
     window.GOVUKFrontend.initAll()
-  </script>
+  </script> -->
 </body>
 
 </html>
