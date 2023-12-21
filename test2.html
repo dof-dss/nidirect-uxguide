@@ -88,11 +88,9 @@
  -->
 
     <!-- new header -->
-    <header role="banner" data-module="govuk-header">
-        <div class="nidirect-header">
-            <div class="govuk-width-container flex-parent">
-                <div class="nidirect-header__logo">
-                    <div class="nidirect-logo__container">
+    <header class="nidirect-header" role="banner" data-module="govuk-header">
+            <div class="govuk-width-container nidirect-header__container">
+                    <div class="nidirect-header__logo">
                         <svg role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" width="133"
                             height="32" viewbox="0 0 133 32">
                             <path fill="currentColor"
@@ -115,14 +113,11 @@
                         </svg>
                         <span class="govuk-visually-hidden">(n i direct government services)</span>
                     </div>
-                </div>
-                <div class="nidirect-header__content">
-                    <nav role="navigation" aria-label="Menu" class="govuk-header__navigation">
-                        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle"
-                            aria-controls="navigation" aria-label="Show or hide Top Level Navigation"
-                            aria-expanded="true">Menu</button>
 
-                        <ul id="navigation" class="govuk-header__navigation-list nidirect-header__navigation">
+                    <nav aria-label="Menu" class="govuk-header__navigation nidirect-header__navigation">
+                        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle"
+                            aria-controls="navigation" aria-expanded="false" hidden>Menu</button>
+                        <ul id="navigation" class="govuk-header__navigation-list">
                             <li
                                 class="govuk-header__navigation-item nidirect-header__navigation-item nidirect-header__navigation-item--active">
                                 <a class="govuk-header__link" href="#">
@@ -146,13 +141,13 @@
                             </li>
                         </ul>
                     </nav>
-                </div>
+                
             </div>
-        </div>
+      
 
-        <div class="nidirect-servicename-container">
+        <div class="nidirect-header__servicename">
             <div class="govuk-width-container">
-                <span class="nidirect-servicename">Service name</span>
+                Service name
             </div>
         </div>
     </header>
