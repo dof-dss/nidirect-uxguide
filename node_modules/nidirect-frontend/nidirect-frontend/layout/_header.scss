@@ -1,101 +1,87 @@
-header{
-
-.nidirect-header{
+.nidirect-header {
+    position: relative;
     background-color: $nidirect-brand-blue;
-    color:$nidirect-white;
+    color: $nidirect-white;
+    @include govuk-font($size: 16);
+}
 
-    nav{
-        
-        .nidirect-header__navigation-item {
-            height: auto;
-            padding: 0;
-            margin: 0;
-            font-size: 1rem;
-            &:focus {
-                height: 100%;  
-            }
-            a{
-                padding: 0 1rem;
-                display: block;
-                line-height: 57px;
-                text-align: me;
-
-                &:visited {
-                    color: $nidirect-white;
-                }
-
-                 &:focus {
-                    background-color: $govuk-focus-colour;
-                    color: black;  
-                    }
-
-            }
-        }
-        .nidirect-header__navigation-item--active{
-            background-color: $nidirect-dark-blue;
-            border-bottom-width: 4px;
-            border-bottom: 3px solid;
-            border-color: $nidirect-white;
-            height: calc(100% - 3px);
-
-        } 
-        .nidirect-header__navigation{
-            margin-bottom: 0;
-            height: auto;
-            font-size: 0;
-        }
-
-         
-
+.nidirect-header__container {
+    position: relative;
+    @include govuk-media-query($from: desktop) {
+        display: flex;
+        justify-content: space-between;
     }
 }
-.nidirect-header__logo{
- padding: 0;
- border:0;
- -ms-flex-item-align: center;
- -ms-grid-row-align: center;
- align-self: flex-start;
- margin: 0;
- display: block;
- padding: 0.74625rem 0;
-}
-}
-.nidirect-logo__container{
-     margin:0;
+
+.nidirect-header__logo {
+    border: 0;
+    height: 2rem;
+    margin: 0;
+    display: inline-block;
+    padding: 0.6875rem 0;
+    margin-right: govuk-spacing(4);
+    @include govuk-media-query($from: tablet) {
+        padding: 0.875rem 0; //padding to match height of service name
+    }
 }
 
-.nidirect-servicename-container{
+.nidirect-header__navigation {
+    margin-bottom: 0 !important;
+}
+
+.govuk-header__menu-button {
+    top: 1.25rem !important; //fix for menu button vertical position on mobile and tablet viewports
+}
+
+.nidirect-header__navigation-item {
+    padding: 1rem;
+    margin: 0;
+    border: 0; //remove border between nav items on mobile and tablet viewports
+
+    a {
+        white-space: normal; //fix for mobile and tablet nav items to allow them to wrap if they have a lot of text
+
+        &:link,
+        &:hover,
+        &:active,
+        &:visited {
+            color: $nidirect-white;
+        }
+
+        &:focus {
+            background-color: $govuk-focus-colour;
+            color: black;
+        }
+    }
+    @include govuk-media-query($from: desktop) {
+        padding: 1.25rem 1rem; // increase padding for desktop viewport
+        margin: 0;
+    }
+}
+
+li.nidirect-header__navigation-item:last-child{
+    margin-bottom: 0.5rem; //add bottom margin to last nav item on mobile and tablet viewports
+    @include govuk-media-query($from: desktop){
+        margin-bottom: 0; //remove bottom margin for desktop viewports
+    }
+}
+
+.nidirect-header__navigation-item--active {
+    background-color: $nidirect-dark-blue;
+    border-left: 4px solid;
+    padding-left: calc(1rem - 4px); //calculation to reduce padding by 4px so the text with align to the left
+    @include govuk-media-query($from: desktop) {
+        border-left: 0;
+        border-bottom: 4px solid !important;
+        padding-bottom: calc(1.25rem - 4px); //calculation to reduce padding by 4px so the text will align vertically
+    }
+}
+
+.nidirect-header__servicename {
     background-color: $nidirect-mid-grey;
     padding: 1.125rem 0;
+    display: block;
     border-bottom: 1px solid $nidirect-mid-grey;
-    .nidirect-servicename{
-        color:$nidirect-mid-blue;
-        font-weight: 400;
-        padding:0;
-        margin:0;
-    }
+    @include govuk-font($size: 27);
+    color: $nidirect-mid-blue;
 }
-
-.flex-parent {
-    @media screen and (min-width: 769px) {
-        
-    display: flex;
-    justify-content: space-between;
-
-    .nidirect-header__logo{
-        float:left;
-      }
-    
-      .nidirect-right ul {
-        text-align:right;
-      }
-    
-
-    }
-}
-
-/* styling fix for navigation menu button */
-header div.nidirect-header div.flex-parent {
-    position: relative;
-    }
-
