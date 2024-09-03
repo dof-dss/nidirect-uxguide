@@ -57,39 +57,42 @@
         </svg>
         <span class="govuk-visually-hidden">(n i direct government services)</span>
       </div>
-      <nav aria-label="Menu" class="govuk-header__navigation nidirect-header__navigation">
-        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation"
-          aria-expanded="false" hidden>Menu</button>
-        <ul id="navigation" class="govuk-header__navigation-list">
-          <li
-            class="govuk-header__navigation-item nidirect-header__navigation-item">
-            <a class="govuk-header__link" href="index.html">
-              Home
+    </div>
+    <section aria-label="Service information" class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <span class="govuk-service-navigation__service-name">
+        <a href="#" class="govuk-service-navigation__link">
+          <a class="govuk-service-navigation__link" href="index.html">
+          User Experience Guide
+        </a>
+      </span>
+      <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" aria-expanded="true" hidden="">
+        Menu
+      </button>
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="user_centred_design.html">
+              <strong class="govuk-service-navigation__active-fallback">User-centred design</strong>
             </a>
           </li>
-          <li class="govuk-header__navigation-item nidirect-header__navigation-item">
-            <a class="govuk-header__link" href="user_centred_design.html">
-              User-centred design
-            </a>
-          </li>
-          <li class="govuk-header__navigation-item nidirect-header__navigation-item">
-            <a class="govuk-header__link" href="usability_testing.html">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="usability_testing.html" >
               Usability testing
             </a>
           </li>
-          <li class="govuk-header__navigation-item nidirect-header__navigation-item">
-            <a class="govuk-header__link" href="applying_brand.html">
+          <li class="govuk-service-navigation__item">
+            <a class="govuk-service-navigation__link" href="applying_brand.html">
               Applying the brand
             </a>
           </li>
         </ul>
       </nav>
     </div>
-    <div class="nidirect-header__servicename">
-      <div class="govuk-width-container">
-        User Experience Guide
-      </div>
-    </div>
+  </div>
+</section>
   </header>
   
   <div class="govuk-width-container">
@@ -122,11 +125,6 @@
         <li>
           <a class="govuk-link" href="http://www.nidirect.gov.uk/terms-and-conditions" target="_blank" rel="nofollow">
             Terms and conditions (opens in a new tab)
-          </a>
-        </li>
-        <li>
-          <a class="govuk-link" href="cookies.html">
-            Cookies
           </a>
         </li>
         <li>
