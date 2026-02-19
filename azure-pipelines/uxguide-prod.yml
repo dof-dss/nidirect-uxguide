@@ -24,11 +24,14 @@ steps:
         --index-document index.html \
         --404-document 404.html
 
-      echo "Uploading contents of '$SOURCE_FOLDER' to \$web..."
+      echo "Uploading contents of '$SOURCE_FOLDER' to \$web (excluding .json files and node_modules)..."
       az storage blob upload-batch \
         --account-name "$STORAGE_ACCOUNT_NAME" \
         --destination '$web' \
         --source "$SOURCE_FOLDER" \
-        --overwrite true
-        
+        --overwrite true \
+        --exclude "*.json" \
+        --exclude "node_modules/*" \
+        --exclude "node_modules/**/*"
+
       echo "✅ Upload complete."
