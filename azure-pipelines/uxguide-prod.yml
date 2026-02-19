@@ -3,6 +3,8 @@ trigger:
     include:
       - main
 
+steps:  
+
 - task: AzureCLI@2
   displayName: 'Upload static site to Azure Storage ($web)'
   inputs:
