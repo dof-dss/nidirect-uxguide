@@ -1,0 +1,79 @@
+##################################
+# Build / Compiled Output
+##################################
+
+# CSS compiled from SCSS (adjust if you *do* want compiled CSS tracked)
+dist/
+build/
+public/
+
+# If using a SCSS build step
+*.map
+
+##################################
+# Dependencies
+##################################
+
+node_modules/
+bower_components/
+
+##################################
+# Environment & Secrets
+##################################
+
+.env
+.env.*
+!.env.example
+
+##################################
+# Azure DevOps
+##################################
+
+# Pipeline artifacts
+.azure-pipelines/
+.pipeline/
+artifacts/
+
+##################################
+# Logs & Temp Files
+##################################
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+.tmp/
+.cache/
+
+##################################
+# OS Files
+##################################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+##################################
+# Editor / IDE Settings
+##################################
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains
+.idea/
+*.iml
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+##################################
+# Misc
+##################################
+
+coverage/
