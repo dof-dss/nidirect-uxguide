@@ -2,22 +2,17 @@
   "name": "uxg-govuk",
   "version": "1.0.0",
   "description": "govuk frontend for uxg",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "sass": "node node_modules/sass/sass.js --load-path=./node_modules --quiet-deps node_modules/nidirect-frontend/nidirect-all.scss assets/css/main.css --style=compressed --no-source-map --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amcalinney/nidirect-uxguide.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amcalinney/nidirect-uxguide/issues"
-  },
-  "homepage": "https://github.com/amcalinney/nidirect-uxguide#readme",
   "dependencies": {
-    "govuk-frontend": "^5.14.0",
-    "nidirect-frontend": "^2.0.0"
+    "govuk-frontend": "^6.0.0",
+    "nidirect-frontend": "^3.0.2",
+    "sass": "^1.97.3"
   }
 }
