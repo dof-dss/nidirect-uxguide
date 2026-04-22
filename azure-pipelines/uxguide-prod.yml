@@ -6,32 +6,31 @@ trigger:
 steps:  
 
 - task: AzureCLI@2
-  displayName: 'Deploy static site with AzCopy'
+  displayName: 'Upload static site to Azure Storage ($web)'
   inputs:
     azureSubscription: 'EDD-General-Prod'
-    scriptType: bash
-    scriptLocation: inlineScript
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
     inlineScript: |
       set -euo pipefail
 
       STORAGE_ACCOUNT_NAME="uxguide2"
-      SOURCE_FOLDER="."
+      SOURCE_FOLDER="."  # deploying from root
 
       echo "Enabling static website..."
       az storage blob service-properties update \
         --account-name "$STORAGE_ACCOUNT_NAME" \
-        --auth-mode login \
         --static-website \
         --index-document index.html \
         --404-document 404.html
 
-      echo "Syncing site with AzCopy..."
-      az storage blob sync \
+      echo "Uploading contents of '$SOURCE_FOLDER' to \$web..."
+      az storage blob upload-batch \
         --account-name "$STORAGE_ACCOUNT_NAME" \
-        --container '$web' \
+        --destination '$web' \
         --source "$SOURCE_FOLDER" \
-        --auth-mode login \
-        --exclude-pattern "*.json;node_modules/*;azure-pipelines/*;.gitignore"
+        --overwrite true
+        
 
 
 
