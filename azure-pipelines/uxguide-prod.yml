@@ -5,22 +5,31 @@ trigger:
 
 variables:
   storageAccountName: uxguide2
-  buildOutputFolder: dist   # change if your framework outputs elsewhere
+  buildOutputFolder: site
 
 steps:
 # -------------------------
-# Build Step
+# Build / Prepare Step
 # -------------------------
-- task: NodeTool@0
-  displayName: 'Use Node.js LTS'
-  inputs:
-    versionSpec: '20.x'
-
 - script: |
     set -euo pipefail
-    npm ci
-    npm run build
-  displayName: 'Build static site'
+
+    echo "Preparing static site output..."
+    rm -rf site
+    mkdir site
+
+    # Copy only what should be publicly deployed
+    cp -R \
+      index.html \
+      404.html \
+      assets \
+      css \
+      js \
+      images \
+      site/
+
+    echo "✅ Static site prepared in ./site"
+  displayName: 'Prepare static site files'
 
 # -------------------------
 # Deploy Step
@@ -44,14 +53,14 @@ steps:
         --index-document index.html \
         --404-document 404.html
 
-      echo "Uploading static site files from $SOURCE_FOLDER to \$web..."
+      echo "Uploading static site files to \$web..."
       az storage blob upload-batch \
         --account-name "$STORAGE_ACCOUNT_NAME" \
         --source "$SOURCE_FOLDER" \
         --destination "\$web" \
         --overwrite true
 
-      echo "Setting cache-control headers..."
+      echo "Setting cache headers..."
 
       az storage blob update-batch \
         --account-name "$STORAGE_ACCOUNT_NAME" \
@@ -62,13 +71,14 @@ steps:
       az storage blob update-batch \
         --account-name "$STORAGE_ACCOUNT_NAME" \
         --destination "\$web" \
-        --pattern "*.js" \
+        --pattern "*.css" \
         --content-cache-control "public, max-age=31536000, immutable"
 
       az storage blob update-batch \
         --account-name "$STORAGE_ACCOUNT_NAME" \
         --destination "\$web" \
-        --pattern "*.css" \
+        --pattern "*.js" \
         --content-cache-control "public, max-age=31536000, immutable"
 
-      echo "✅ Static site deployment complete."
+      echo "✅ Deployment complete."
+``
