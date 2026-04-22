@@ -56,24 +56,4 @@ steps:
         --destination "\$web" \
         --overwrite true
 
-      echo "Setting cache headers..."
-
-      az storage blob update-batch \
-        --account-name "$STORAGE_ACCOUNT_NAME" \
-        --destination "\$web" \
-        --pattern "*.html" \
-        --content-cache-control "no-cache"
-
-      az storage blob update-batch \
-        --account-name "$STORAGE_ACCOUNT_NAME" \
-        --destination "\$web" \
-        --pattern "*.css" \
-        --content-cache-control "public, max-age=31536000, immutable"
-
-      az storage blob update-batch \
-        --account-name "$STORAGE_ACCOUNT_NAME" \
-        --destination "\$web" \
-        --pattern "*.js" \
-        --content-cache-control "public, max-age=31536000, immutable"
-
       echo "✅ Deployment complete."
