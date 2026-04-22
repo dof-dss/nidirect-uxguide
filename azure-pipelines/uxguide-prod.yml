@@ -30,8 +30,9 @@ steps:
         --destination '$web' \
         --source "$SOURCE_FOLDER" \
         --overwrite true \
-        --exclude "*.json" \
-        --exclude "node_modules/*" \
-        --exclude "node_modules/**/*"
+        --exclude-pattern "*.json" \
+        --exclude-pattern "node_modules/*" \
+        --exclude-pattern "node_modules/**/*"
+
 
       echo "✅ Upload complete."
