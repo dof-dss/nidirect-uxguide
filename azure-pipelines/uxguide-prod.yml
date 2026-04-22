@@ -20,12 +20,8 @@ steps:
 
     # Copy only what should be publicly deployed
     cp -R \
-      index.html \
-      404.html \
+      *.html \
       assets \
-      css \
-      js \
-      images \
       site/
 
     echo "✅ Static site prepared in ./site"
