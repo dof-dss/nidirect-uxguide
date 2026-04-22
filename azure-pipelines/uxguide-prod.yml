@@ -32,7 +32,9 @@ steps:
         --overwrite true \
         --exclude-pattern "*.json" \
         --exclude-pattern "node_modules/*" \
-        --exclude-pattern "node_modules/**/*"
+        --exclude-pattern "node_modules/**/*"\
+        --exclude-pattern "azure-pipelines/**"
+
 
 
       echo "✅ Upload complete."
