@@ -3,8 +3,7 @@ trigger:
     include:
       - main
 
-steps:  
-
+steps:
 - task: AzureCLI@2
   displayName: 'Upload static site to Azure Storage ($web)'
   inputs:
@@ -15,7 +14,18 @@ steps:
       set -euo pipefail
 
       STORAGE_ACCOUNT_NAME="uxguide2"
-      SOURCE_FOLDER="."  # deploying from root
+      STAGING_DIR=".deploy"
+
+      echo "Cleaning staging directory..."
+      rm -rf "$STAGING_DIR"
+      mkdir "$STAGING_DIR"
+
+      echo "Staging files using .gitignore..."
+      rsync -av \
+        --delete \
+        --exclude-from=.gitignore \
+        --exclude=".git" \
+        ./ "$STAGING_DIR/"
 
       echo "Enabling static website..."
       az storage blob service-properties update \
@@ -24,14 +34,19 @@ steps:
         --index-document index.html \
         --404-document 404.html
 
-      echo "Uploading contents of '$SOURCE_FOLDER' to \$web (excluding .json files and node_modules)..."
-      az storage blob upload-batch \
+      echo "Retrieving storage account key..."
+      STORAGE_KEY=$(az storage account keys list \
         --account-name "$STORAGE_ACCOUNT_NAME" \
-        --destination '$web' \
-        --source "$SOURCE_FOLDER" \
-        --overwrite true \
-        --exclude "*.json" \
-        --exclude "node_modules/*" \
-        --exclude "node_modules/**/*"
+        --query "[0].value" \
+        --output tsv)
+
+      echo "Uploading staged site using AzCopy..."
+      azcopy copy "$STAGING_DIR" \
+        "https://${STORAGE_ACCOUNT_NAME}.blob.core.windows.net/\$web" \
+        --recursive \
+        --overwrite=true \
+        --from-to=LocalBlob \
+        --blob-type BlockBlob \
+        --account-key "$STORAGE_KEY"
 
       echo "✅ Upload complete."
