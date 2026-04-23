@@ -8,10 +8,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "sass": "node node_modules/sass/sass.js --load-path=./node_modules --quiet-deps node_modules/nidirect-frontend/nidirect-all.scss assets/css/main.css --style=compressed --no-source-map --watch"
+    "sass": "node node_modules/sass/sass.js --load-path=./node_modules --quiet-deps node_modules/nidirect-frontend/nidirect-all.scss assets/css/main.css --style=compressed --no-source-map --watch"
   },
   "dependencies": {
-    "govuk-frontend": "^6.0.0",
+    "govuk-frontend": "^6.1.0",
     "nidirect-frontend": "^3.0.2",
     "sass": "^1.97.3"
   }

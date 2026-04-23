@@ -29,9 +29,8 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <script>
-        document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
-      </script>
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
       <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
     
       <header class="nidirect-header" role="banner" data-module="govuk-header">
@@ -58,6 +57,9 @@
             <span class="govuk-visually-hidden">(n i direct government services)</span>
           </div>
         </div>
+
+
+
         <section aria-label="Service information" class="govuk-service-navigation"
       data-module="govuk-service-navigation">
       <div class="govuk-width-container">
@@ -92,9 +94,11 @@
         </div>
       </div>
     </section>
+
       </header>
 
-    <div class="govuk-width-container main-content-container">
+  <div class="page-layout">
+    <div class="govuk-width-container">
         <main class="govuk-main-wrapper " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
@@ -204,6 +208,7 @@
             </div>
         </main>
     </div>
+    </div>
 
     <footer class="nidirect-footer" role="contentinfo">
         <div class="govuk-width-container">
@@ -232,14 +237,13 @@
           </ul>
         </div>
       </footer>
-    
-      <script type="module" src="/assets/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
-      <script type="module">
-        import {
-          initAll
-        } from '/assets/govuk-frontend/dist/govuk/govuk-frontend.min.js'
-        initAll()
-      </script>
-    </body>
+
+  <script type="module">
+    import { initAll } from '/assets/js/govuk-frontend.min.js'
+    initAll()
+  </script>
+
+
+</body>
     
     </html>

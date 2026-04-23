@@ -94,7 +94,8 @@
 </section>
   </header>
 
-  <div class="govuk-width-container main-content-container">
+<div class="page-layout">
+  <div class="govuk-width-container">
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -144,6 +145,7 @@
       </div>
     </main>
   </div>
+  </div>
 
   <footer class="nidirect-footer" role="contentinfo">
     <div class="govuk-width-container">
@@ -173,11 +175,8 @@
     </div>
   </footer>
 
-  <script type="module" src="/assets/govuk-frontend/dist/govuk/govuk-frontend.min.js"></script>
   <script type="module">
-    import {
-      initAll
-    } from '/assets/govuk-frontend/dist/govuk/govuk-frontend.min.js'
+    import { initAll } from '/assets/js/govuk-frontend.min.js'
     initAll()
   </script>
 </body>
