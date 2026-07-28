@@ -102,6 +102,32 @@
     }, 2000);
   }
   
+  // Track created copy buttons so their layout can be updated on viewport changes
+  const copyButtons = [];
+
+  // GOV.UK tablet breakpoint (40.0625em). Below this, govuk-button is width:100%.
+  const mobileQuery = window.matchMedia('(max-width: 40.0525em)');
+
+  // Lay out a copy button responsively:
+  // - Mobile: full container width (inset 10px each side) without overflowing left
+  // - Desktop: compact button anchored top-right
+  function layoutCopyButton(button) {
+    if (mobileQuery.matches) {
+      button.style.left = '10px';
+      button.style.right = '10px';
+      button.style.width = 'auto';
+    } else {
+      button.style.left = 'auto';
+      button.style.right = '10px';
+      button.style.width = 'auto';
+    }
+  }
+
+  // Re-layout all buttons when crossing the breakpoint
+  mobileQuery.addEventListener('change', function() {
+    copyButtons.forEach(layoutCopyButton);
+  });
+
   // Initialize copy buttons
   function initCopyButtons() {
     // Find all code blocks within details elements
@@ -132,6 +158,9 @@
           preElement.classList.add('code-block-container');
         }
         preElement.insertBefore(copyButton, preElement.firstChild);
+        // Apply responsive layout (full width on mobile, compact on desktop)
+        copyButtons.push(copyButton);
+        layoutCopyButton(copyButton);
       }
     });
   }
